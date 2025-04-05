@@ -1,3 +1,44 @@
 :root {
-    font-family: Arial, Helvetica, sans-serif;
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #0d0d0d;
+}
+
+nav {
+  text-align: center;
+  background-color: #222222;
+  margin: 3.4vw;
+  margin-top: 2vw;
+  margin-bottom: 2vw;
+  border-radius: 2.1vw;
+  font-size: 2.6vw;
+  border: 0;
+}
+
+button,
+.BtnP {
+  background-color: #0fe1c5;
+  margin: 0.71vw;
+  width: 16.5vw;
+  height: 4.5vw;
+  border-radius: 2.1vw;
+  font-size: 2.6vw;
+  border: 0;
+  opacity: 1;
+
+  transition: opacity, width, height, margin-left, 0.2s ease-in-out;
+}
+
+.BtnP {
+  background-color: #0f93b1;
+  color: #fff;
+}
+
+button:hover {
+  opacity: 0.5;
+  width: 17vw;
+  height: 5vw;
+  margin: 0.21vw;
+  margin-left: 0.71vw;
+
+  transition: opacity, width, height, margin-left, 0.2s ease-in-out;
 }

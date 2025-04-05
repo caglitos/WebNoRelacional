@@ -1,10 +1,15 @@
-import { StrictMode } from 'react'
-import { createRoot } from 'react-dom/client'
-import App from './App.tsx'
-import './index.css'
+import { StrictMode } from "react";
+import { createRoot } from "react-dom/client";
+import Registro from "./components/Registro";
+import "./index.css";
+import "bootstrap";
 
-createRoot(document.getElementById('root')!).render(
+const params = new URLSearchParams(window.location.search);
+
+const page = params.get("page");
+
+createRoot(document.getElementById("root")!).render(
   <StrictMode>
-    <App />
-  </StrictMode>,
-)
+    <Registro />
+  </StrictMode>
+);
