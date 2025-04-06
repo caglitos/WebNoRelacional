@@ -16,9 +16,12 @@ main {
 }
 
 main {
-  height: 80vh;
+  min-height: 75vh;
   padding: 2vw;
   transition: 0.2s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
 }
 
 section {
@@ -26,6 +29,8 @@ section {
   border: 1px solid #d9d9d9;
   padding-left: 1vw;
   padding-right: 1vw;
+  margin-top: 0.5vw;
+  margin-bottom: 0.5vw;
 
   transition: 0.2s ease-in-out;
 }
@@ -144,4 +149,27 @@ button:hover {
 .input-con-boton .boton {
   position: absolute;
   right: 0.5vw;
+}
+
+.botones-finales {
+  display: flex;
+  width: 100%;
+  gap: 1vw;
+  margin-top: auto; /* ¡empuja los botones al final! */
+}
+
+.botones-finales > * {
+  flex: 1;
+}
+
+.grupo-section {
+  display: flex;
+  align-items: flex-start;
+  gap: 1vw;
+}
+
+.eliminar-section {
+  display: flex;
+  align-items: center;
+  padding-top: 1vw; /* para alinear mejor con el inicio del section */
 }

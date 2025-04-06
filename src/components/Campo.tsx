@@ -2,7 +2,11 @@ import { useState } from "react";
 import ButtonAdd from "./ButtonAdd";
 import ButtonD from "./ButtonDel";
 
-function Campo() {
+interface CampoProps {
+  onDelete: () => void;
+}
+
+function Campo({ onDelete }: CampoProps) {
   const [valores, setValores] = useState([""]);
 
   const agregarValor = () => {
@@ -21,39 +25,43 @@ function Campo() {
   };
 
   return (
-    <div>
-      <section>
-        {/* Input Clave */}
-        <input type="text" placeholder="Clave" />
+    <div className="contenedor-campo">
+      <div className="grupo-section">
+        <section>
+          <input type="text" placeholder="Clave" />
 
-        {/* Primer input de Valor con botón de agregar */}
-        <div className="input-con-boton">
-          <input
-            type="text"
-            placeholder="Valor"
-            value={valores[0]}
-            onChange={(e) => actualizarValor(0, e.target.value)}
-          />
-          <div className="boton">
-            <ButtonAdd onClick={agregarValor} />
-          </div>
-        </div>
-
-        {/* Valores extra con botón eliminar */}
-        {valores.slice(1).map((valor, index) => (
-          <div key={index + 1} className="input-con-boton">
+          <div className="input-con-boton">
             <input
               type="text"
-              placeholder="Valor extra"
-              value={valor}
-              onChange={(e) => actualizarValor(index + 1, e.target.value)}
+              placeholder="Valor"
+              value={valores[0]}
+              onChange={(e) => actualizarValor(0, e.target.value)}
             />
             <div className="boton">
-              <ButtonD onClick={() => eliminarValor(index + 1)} />
+              <ButtonAdd onClick={agregarValor} classN="" />
             </div>
           </div>
-        ))}
-      </section>
+
+          {valores.slice(1).map((valor, index) => (
+            <div key={index + 1} className="input-con-boton">
+              <input
+                type="text"
+                placeholder="Valor extra"
+                value={valor}
+                onChange={(e) => actualizarValor(index + 1, e.target.value)}
+              />
+              <div className="boton">
+                <ButtonD onClick={() => eliminarValor(index + 1)} />
+              </div>
+            </div>
+          ))}
+        </section>
+
+        {/* Botón al lado derecho del section */}
+        <div className="eliminar-section">
+          <ButtonD onClick={onDelete} />
+        </div>
+      </div>
     </div>
   );
 }

@@ -1,9 +1,20 @@
-import React from "react";
-import Button from "../components/Button";
+import React, { useState } from "react";
+import Button from "../components/ButtonRedirect";
 import ButtonPresed from "../components/ButonPresed";
 import Campo from "../components/Campo";
+import ButtonAdd from "../components/ButtonAdd";
 
-const App: React.FC = () => {
+const Registro: React.FC = () => {
+  const [campos, setCampos] = useState([Date.now()]); // IDs únicos
+
+  const agregarCampo = () => {
+    setCampos([...campos, Date.now()]);
+  };
+
+  const eliminarCampo = (id: number) => {
+    setCampos(campos.filter((c) => c !== id));
+  };
+
   return (
     <>
       <header>
@@ -17,10 +28,18 @@ const App: React.FC = () => {
       </header>
 
       <main>
-        <Campo />
+        {campos.map((id) => (
+          <Campo key={id} onDelete={() => eliminarCampo(id)} />
+        ))}
+
+        {/* Contenedor de botones finales */}
+        <div className="botones-finales">
+          <ButtonAdd onClick={agregarCampo} classN="AddCampo" />
+          <button className="BtnA AddCampo">Subir</button>
+        </div>
       </main>
     </>
   );
 };
 
-export default App;
+export default Registro;
