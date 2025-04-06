@@ -3,19 +3,72 @@
   background-color: #0d0d0d;
 }
 
-nav {
+nav,
+main {
   text-align: center;
   background-color: #222222;
   margin: 3.4vw;
   margin-top: 2vw;
   margin-bottom: 2vw;
-  border-radius: 2.1vw;
+  border-radius: 3vw;
   font-size: 2.6vw;
   border: 0;
 }
 
-button,
-.BtnP {
+main {
+  height: 80vh;
+  padding: 2vw;
+  transition: 0.2s ease-in-out;
+}
+
+section {
+  border-radius: 5vw;
+  border: 1px solid #d9d9d9;
+  padding-left: 1vw;
+  padding-right: 1vw;
+
+  transition: 0.2s ease-in-out;
+}
+
+input {
+  height: 2.3vw;
+  width: 33vw;
+  border: 2px solid transparent;
+  border-radius: 50vw;
+  padding: 1.1vw;
+  margin: 1vw;
+  outline: none;
+  font-size: 2.6vw;
+
+  transition: border 0.2s ease, padding 0.2s ease, transform 0.2s ease-in-out;
+}
+
+input:hover {
+  transform: scale(1.05);
+
+  transition: 0.2s ease-in-out;
+}
+
+input:focus {
+  border: 2px solid #007bff; /* azul al enfocar */
+  transform: scale(1.05);
+
+  transition: 0.2s ease-in-out;
+}
+
+input::placeholder {
+  color: #222222;
+
+  transition: 0.35s ease-in-out;
+}
+
+input:focus::placeholder {
+  color: #fff;
+  transition: 0.35s ease-in-out;
+}
+
+.BtnP,
+.BtnN {
   background-color: #0fe1c5;
   margin: 0.71vw;
   width: 16.5vw;
@@ -25,7 +78,7 @@ button,
   border: 0;
   opacity: 1;
 
-  transition: opacity, width, height, margin-left, 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
 }
 
 .BtnP {
@@ -33,12 +86,62 @@ button,
   color: #fff;
 }
 
+.BtnD,
+.BtnA {
+  background-color: #e10f0f;
+  margin: 1vw;
+  width: 4vw;
+  height: 4vw;
+  border-radius: 2.1vw;
+  border: 0;
+  font-size: 2.6vw;
+  font-weight: bold;
+  color: #fff;
+  opacity: 1;
+
+  transition: 0.2s ease-in-out;
+}
+
+.BtnA {
+  background-color: #0fe136;
+}
+
 button:hover {
   opacity: 0.5;
-  width: 17vw;
-  height: 5vw;
-  margin: 0.21vw;
-  margin-left: 0.71vw;
+  transform: scale(1.1);
 
-  transition: opacity, width, height, margin-left, 0.2s ease-in-out;
+  transition: 0.2s ease-in-out;
+  cursor: pointer;
+}
+
+.BtnP:hover {
+  cursor: auto;
+
+  opacity: 1;
+  transform: scale(1);
+}
+
+.BtnD:hover,
+.BtnA:hover {
+  opacity: 1;
+}
+
+.flex {
+  display: flex;
+  align-items: center;
+}
+
+.input-con-boton {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+}
+
+.input-con-boton input {
+  padding-right: 3vw; /* espacio para el botón */
+}
+
+.input-con-boton .boton {
+  position: absolute;
+  right: 0.5vw;
 }
