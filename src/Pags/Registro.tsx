@@ -36,9 +36,7 @@ const Registro: React.FC = () => {
         {/* Contenedor de botones finales */}
         <div className="botones-finales">
           <ButtonAdd onClick={agregarCampo} classN="AddCampo" />
-          <button className="BtnA AddCampo">
-            <img src="{subir}" className="btn-icon" /> 
-          </button>
+          <button className="BtnA AddCampo">Subir</button>
         </div>
       </main>
     </>
