@@ -1,8 +1,9 @@
 import React, { useState } from "react";
 import Button from "../components/ButtonRedirect";
 import ButtonPresed from "../components/ButonPresed";
-import Campo from "../components/Campo";
+import Campo from "../components/CampoAdd";
 import ButtonAdd from "../components/ButtonAdd";
+import subir from "./assets/subir.svg"
 
 const Registro: React.FC = () => {
   const [campos, setCampos] = useState([Date.now()]); // IDs únicos
@@ -35,7 +36,9 @@ const Registro: React.FC = () => {
         {/* Contenedor de botones finales */}
         <div className="botones-finales">
           <ButtonAdd onClick={agregarCampo} classN="AddCampo" />
-          <button className="BtnA AddCampo">Subir</button>
+          <button className="BtnA AddCampo">
+            <img src="{subir}" className="btn-icon" /> 
+          </button>
         </div>
       </main>
     </>
