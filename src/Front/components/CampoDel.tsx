@@ -6,7 +6,7 @@ interface CampoProps {
   onDelete: () => void;
 }
 
-function Campo({ onDelete }: CampoProps) {
+function Campo({}: /*onDelete*/ CampoProps) {
   const [valores, setValores] = useState([""]);
 
   const agregarValor = () => {

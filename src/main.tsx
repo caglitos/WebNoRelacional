@@ -1,11 +1,11 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Registro from "./Pags/Registro";
-import Eliminar from "./Pags/Eliminar";
-import Editar from "./Pags/Editar";
-import Descargar from "./Pags/Descargar";
-import Revisar from "./Pags/Revisar";
-import "./index.css";
+import Registro from "./Front/Pags/Registro";
+import Eliminar from "./Front/Pags/Eliminar";
+import Editar from "./Front/Pags/Editar";
+import Descargar from "./Front/Pags/Descargar";
+import Revisar from "./Front/Pags/Revisar";
+import "./Front/index.css";
 
 function paguina() {
   const params = new URLSearchParams(window.location.search);

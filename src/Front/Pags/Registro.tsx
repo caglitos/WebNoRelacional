@@ -3,7 +3,6 @@ import Button from "../components/ButtonRedirect";
 import ButtonPresed from "../components/ButonPresed";
 import Campo from "../components/CampoAdd";
 import ButtonAdd from "../components/ButtonAdd";
-import subir from "./assets/subir.svg"
 
 const Registro: React.FC = () => {
   const [campos, setCampos] = useState([Date.now()]); // IDs únicos
