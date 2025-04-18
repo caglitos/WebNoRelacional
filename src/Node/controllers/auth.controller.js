@@ -23,7 +23,7 @@ export const register = async (req, res) => {
       username: userSaved.username,
       email: userSaved.email,
       createdAt: userSaved.createdAt,
-      upadatedAt: userSaved.updatedAt,
+      updatedAt: userSaved.updatedAt,
     });
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error" });
@@ -51,7 +51,7 @@ export const login = async (req, res) => {
       username: userFound.username,
       email: userFound.email,
       createdAt: userFound.createdAt,
-      upadatedAt: userFound.updatedAt,
+      updatedAt: userFound.updatedAt,
     });
   } catch (error) {
     res.status(500).json({ message: "Internal Server Error" });
@@ -63,6 +63,18 @@ export const logout = (req, res) => {
   return res.sendStatus(200);
 };
 
-export const profile = (req, res) => {
-  res.send("profile");
+export const profile = async (req, res) => {
+  const userFound = await User.findById(req.user.id);
+
+  if (!userFound) {
+    return res.status(400).json({ message: "User not found" });
+  }
+
+  return res.json({
+    id: userFound._id,
+    username: userFound.username,
+    email: userFound.email,
+    createdAt: userFound.createdAt,
+    updatedAt: userFound.updatedAt,
+  });
 };

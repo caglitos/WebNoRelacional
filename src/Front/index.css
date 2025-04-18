@@ -1,18 +1,25 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #0d0d0d;
+  background-image: url("https://www.chileclimbers.cl/wp-content/uploads/2019/09/final.jpg");
+  background-size: cover; /* Cubre todo el área */
+  background-position: center; /* Centra la imagen */
+  background-repeat: no-repeat; /* Evita repetición */
+  background-attachment: fixed; /* Fondo fijo al hacer scroll (opcional) */
+  min-height: 100vh; /* Altura mínima = 100% del viewport */
 }
 
 nav,
 main {
   text-align: center;
-  background-color: #222222;
+  background-color: transparent;
   margin: 3.4vw;
   margin-top: 2vw;
   margin-bottom: 2vw;
   border-radius: 3vw;
   font-size: 2.6vw;
   border: 0;
+  backdrop-filter: blur(4px);
+  border: 2px solid #a3a3a3;
 }
 
 main {
@@ -34,6 +41,7 @@ section {
   width: 77vw;
   max-height: 100vw;
   text-align: end;
+  backdrop-filter: blur(8px);
 
   transition: 0.2s ease-in-out;
 }
@@ -86,9 +94,9 @@ input:focus::placeholder {
 .BtnN {
   background-color: #0fe1c5;
   margin: 0.71vw;
-  width: 16.5vw;
+  width: 16.7vw;
   height: 4.5vw;
-  border-radius: 2.1vw;
+  border-radius: 2.5vw;
   font-size: 2.6vw;
   border: 0;
   opacity: 1;
@@ -113,6 +121,7 @@ input:focus::placeholder {
   font-weight: bold;
   color: #fff;
   opacity: 1;
+  border: 2px solid #a3a3a3;
 
   transition: 0.2s ease-in-out;
 }
@@ -127,6 +136,31 @@ button:hover {
 
   transition: 0.2s ease-in-out;
   cursor: pointer;
+}
+
+.BtnN:hover,
+.BtnP:hover {
+  transform: scale(1.11);
+}
+
+nav > * {
+  opacity: 1;
+  transform: scale(1);
+  transition: all 0.3s ease; /* Transición suave */
+}
+
+/* Aplicar el efecto SOLO cuando el hover está en un botón (no en el nav) */
+nav > *:hover {
+  transform: scale(1.2);
+  opacity: 1;
+  z-index: 1; /* Opcional: para que el botón hovered quede sobre los demás */
+}
+
+/* Afectar a los demás botones solo cuando un botón está en hover */
+nav > *:hover ~ *,
+nav:hover > *:not(:hover) {
+  transform: scale(0.9);
+  opacity: 0.5;
 }
 
 .BtnP:hover {
