@@ -1,15 +1,15 @@
 :root {
   font-family: Arial, Helvetica, sans-serif;
-  background-image: url("https://www.chileclimbers.cl/wp-content/uploads/2019/09/final.jpg");
-  background-size: cover; /* Cubre todo el área */
-  background-position: center; /* Centra la imagen */
-  background-repeat: no-repeat; /* Evita repetición */
-  background-attachment: fixed; /* Fondo fijo al hacer scroll (opcional) */
-  min-height: 100vh; /* Altura mínima = 100% del viewport */
+  background-image: url("./assets/mountain.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  min-height: 100vh;
 }
 
-nav,
-main {
+main,
+nav {
   text-align: center;
   background-color: transparent;
   margin: 3.4vw;
@@ -22,6 +22,10 @@ main {
   border: 2px solid #a3a3a3;
 }
 
+nav {
+  justify-content: space-aroxund;
+}
+
 main {
   min-height: 75vh;
   padding: 2vw;
@@ -32,6 +36,7 @@ main {
 }
 
 section {
+  display: flex;
   border-radius: 3.4vw;
   border: 2px solid #a3a3a3;
   padding-left: 1vw;
@@ -42,6 +47,7 @@ section {
   max-height: 100vw;
   text-align: end;
   backdrop-filter: blur(8px);
+  justify-content: space-aroxund;
 
   transition: 0.2s ease-in-out;
 }
@@ -54,7 +60,6 @@ section:hover {
 
 input {
   height: 2.3vw;
-  width: 33vw;
   border: 2px solid transparent;
   border-radius: 50vw;
   padding: 1.1vw;
@@ -94,7 +99,8 @@ input:focus::placeholder {
 .BtnN {
   background-color: #0fe1c5;
   margin: 0.71vw;
-  width: 16.7vw;
+  max-width: 16.7vw;
+  min-width: 16vw;
   height: 4.5vw;
   border-radius: 2.5vw;
   font-size: 2.6vw;

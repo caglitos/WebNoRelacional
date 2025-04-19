@@ -10,8 +10,8 @@ export const authRequiered = (req, res, next) => {
   jwt.verify(token, TOKEN_SECRET, (err, user) => {
     if (err) return res.status(403).json({ message: "Invalid token" });
 
-    req.user = user;
-
+    req.user = user; // Guardas el usuario completo (opcional)
+    req.userId = user.id; // ⬅️ Añades esto para compatibilidad
     next();
   });
 };
