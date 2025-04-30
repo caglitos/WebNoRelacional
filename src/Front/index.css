@@ -36,7 +36,7 @@ main {
 }
 
 section {
-  display: flex;
+  display: felx;
   border-radius: 3.4vw;
   border: 2px solid #a3a3a3;
   padding-left: 1vw;
@@ -45,9 +45,8 @@ section {
   margin-bottom: 0.5vw;
   width: 77vw;
   max-height: 100vw;
-  text-align: end;
   backdrop-filter: blur(8px);
-  justify-content: space-aroxund;
+  justify-content: flex-start;
 
   transition: 0.2s ease-in-out;
 }
@@ -59,6 +58,7 @@ section:hover {
 }
 
 input {
+  width: 40%;
   height: 2.3vw;
   border: 2px solid transparent;
   border-radius: 50vw;
@@ -163,9 +163,26 @@ nav > *:hover {
 }
 
 /* Afectar a los demás botones solo cuando un botón está en hover */
-nav > *:hover ~ *,
-nav:hover > *:not(:hover) {
-  transform: scale(0.9);
+nav {
+  pointer-events: none; /* El nav no detecta hover */
+}
+
+nav > * {
+  pointer-events: auto; /* Los hijos sí lo detectan */
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+nav > *:hover ~ *,          /* Hermanos posteriores */
+nav > .BtnN:has(~ *:hover) {
+  /* Hermanos anteriores (solo navegadores modernos) */
+  opacity: 0.5;
+  transform: scale(0.95);
+}
+
+nav > *:hover ~ *,          /* Hermanos posteriores */
+nav > .BtnP:has(~ *:hover) {
+  /* Hermanos anteriores (solo navegadores modernos) */
   opacity: 0.5;
 }
 
@@ -193,7 +210,7 @@ nav:hover > *:not(:hover) {
 }
 
 .input-con-boton input {
-  padding-right: 3vw; /* espacio para el botón */
+  width: 100%;
 }
 
 .input-con-boton .boton {

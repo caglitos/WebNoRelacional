@@ -48,7 +48,6 @@ export const createData = async (req, res) => {
     const newDocument = await UserData.create({
       userId: req.userId,
       content,
-      metadata: metadata || {},
     });
 
     res.status(201).json({ success: true, data: newDocument });

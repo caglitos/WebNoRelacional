@@ -13,11 +13,6 @@ const userDataSchema = new mongoose.Schema(
       type: mongoose.Schema.Types.Mixed,
       default: {}, // Puede ser cualquier JSON: objeto, array, string, etc.
     },
-    // Metadata opcional para organizar/consultar después
-    metadata: {
-      dataType: String, // ej: "friends", "contacts", "notes"
-      tags: [String], // ej: ["work", "important"]
-    },
   },
   { timestamps: true } // Crea automáticamente createdAt/updatedAt
 );

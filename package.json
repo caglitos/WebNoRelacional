@@ -19,8 +19,9 @@
     "mongodb": "6.15",
     "mongoose": "^8.13.2",
     "morgan": "^1.10.0",
-    "react": "^19.0.0",
-    "react-dom": "^19.0.0"
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "zod": "^3.24.3"
   },
   "devDependencies": {
     "@eslint/js": "^9.21.0",
@@ -41,5 +42,12 @@
   "main": "eslint.config.js",
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/caglitos/WebNoRelacional.git"
+  },
+  "bugs": {
+    "url": "https://github.com/caglitos/WebNoRelacional/issues"
+  }
 }

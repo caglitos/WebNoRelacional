@@ -28,7 +28,7 @@ function Campo({ onDelete }: CampoProps) {
     <div className="contenedor-campo">
       <div className="grupo-section">
         <section>
-          <input type="text" placeholder="Clave" />
+          <input className="clave" type="text" placeholder="Clave" />
 
           <div className="input-con-boton">
             <input
