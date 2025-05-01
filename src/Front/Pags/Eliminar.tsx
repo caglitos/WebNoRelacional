@@ -14,11 +14,27 @@ const Eliminar: React.FC = () => {
     <>
       <header>
         <nav>
-          <Button text="Registro" href="Registro" />
+          <Button
+            text="Registro"
+            extra="Pestaña para suibir los elementos"
+            href="Registro"
+          />
           <ButtonPresed text="Eliminar" />
-          <Button text="Editar" href="Editar" />
-          <Button text="Descargar" href="Descargar" />
-          <Button text="Revisar" href="Revisar" />
+          <Button
+            text="Editar"
+            extra="Pestaña para actualizar elementos subidos"
+            href="Editar"
+          />
+          <Button
+            text="Descargar"
+            extra="Pestaña para descargar elementos subidos"
+            href="Descargar"
+          />
+          <Button
+            text="Revisar"
+            extra="Pestaña para ver los elementos subidos"
+            href="Revisar"
+          />
         </nav>
       </header>
 

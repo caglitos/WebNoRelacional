@@ -106,8 +106,7 @@ input:focus::placeholder {
   font-size: 2.6vw;
   border: 0;
   opacity: 1;
-
-  transition: 0.2s ease-in-out;
+  transition: transform 0.2s ease-in-out; /* Solo transición para transform */
 }
 
 .BtnP {
@@ -146,7 +145,8 @@ button:hover {
 
 .BtnN:hover,
 .BtnP:hover {
-  transform: scale(1.11);
+  transform: scale(1.1); /* Solo un scale controlado */
+  opacity: 1 !important; /* Fuerza opacidad completa al hacer hover */
 }
 
 nav > * {
@@ -180,10 +180,42 @@ nav > .BtnN:has(~ *:hover) {
   transform: scale(0.95);
 }
 
-nav > *:hover ~ *,          /* Hermanos posteriores */
-nav > .BtnP:has(~ *:hover) {
-  /* Hermanos anteriores (solo navegadores modernos) */
-  opacity: 0.5;
+.button-container {
+  position: relative; /* Necesario para posicionar el tooltip */
+  display: inline-block;
+}
+
+.extra {
+  /* Estilo del tooltip */
+  position: absolute;
+  top: 100%; /* Aparece debajo del botón */
+  left: 50%;
+  transform: translateX(-50%);
+
+  /* Diseño del cuadro */
+  background: white;
+  color: black;
+  padding: 8px;
+  border-radius: 4px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  border: 1px solid #ddd;
+
+  /* Oculto por defecto */
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s, visibility 0.3s;
+
+  /* Ancho máximo y ajuste de texto */
+  min-width: 100px;
+  width: 150px;
+  max-width: 200px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.BtnN:hover + .extra {
+  opacity: 1;
+  visibility: visible;
 }
 
 .BtnP:hover {

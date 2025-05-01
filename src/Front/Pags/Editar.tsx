@@ -7,11 +7,27 @@ const Descargar: React.FC = () => {
     <>
       <header>
         <nav>
-          <Button text="Registro" href="Registro" />
-          <Button text="Eliminar" href="Eliminar" />
+          <Button
+            text="Registro"
+            extra="Pestaña para suibir los elementos"
+            href="Registro"
+          />
+          <Button
+            text="Eliminar"
+            extra="Pestaña para eliminar elementos subidos"
+            href="Eliminar"
+          />
           <ButtonPresed text="Editar" />
-          <Button text="Descargar" href="Descargar" />
-          <Button text="Revisar" href="Revisar" />
+          <Button
+            text="Descargar"
+            extra="Pestaña para descargar elementos subidos"
+            href="Descargar"
+          />
+          <Button
+            text="Revisar"
+            extra="Pestaña para ver los elementos subidos"
+            href="Revisar"
+          />
         </nav>
       </header>
     </>
