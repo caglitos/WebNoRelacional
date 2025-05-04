@@ -46,7 +46,7 @@ function Campo({ onDelete }: CampoProps) {
             <div key={index + 1} className="input-con-boton">
               <input
                 type="text"
-                placeholder="Valor extra"
+                placeholder="Valor"
                 value={valor}
                 onChange={(e) => actualizarValor(index + 1, e.target.value)}
               />
