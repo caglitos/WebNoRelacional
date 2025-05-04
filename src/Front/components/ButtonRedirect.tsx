@@ -17,7 +17,7 @@ const Button: React.FC<ButtonProps> = ({ text, href, extra }) => {
       <button className="BtnN" onClick={handleClick}>
         {text}
       </button>
-      <span className="extra">{extra}</span>
+      {/*<span className="extra">{extra}</span>*/}
     </div>
   );
 };

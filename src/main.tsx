@@ -1,40 +1,31 @@
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
-import Registro from "./Front/Pags/Registro";
-import Eliminar from "./Front/Pags/Eliminar";
-import Editar from "./Front/Pags/Editar";
-import Descargar from "./Front/Pags/Descargar";
-import Revisar from "./Front/Pags/Revisar";
+import {
+  Revisar,
+  Descargar,
+  Registro,
+  Editar,
+  Eliminar,
+} from "./Front/components/Pags";
 import "./Front/index.css";
 
 function paguina() {
-  const params = new URLSearchParams(window.location.search);
-  const page = params.get("page");
+  const page = new URLSearchParams(window.location.search).get("page");
 
-  console.log(page);
-
-  let contenido;
   switch (page) {
     case "Registro":
-      contenido = <Registro />;
-      break;
+      return <Registro />;
     case "Eliminar":
-      contenido = <Eliminar />;
-      break;
+      return <Eliminar />;
     case "Editar":
-      contenido = <Editar />;
-      break;
+      return <Editar />;
     case "Descargar":
-      contenido = <Descargar />;
-      break;
+      return <Descargar />;
     case "Revisar":
-      contenido = <Revisar />;
-      break;
+      return <Revisar />;
     default:
-      contenido = <Registro />;
+      return <Registro />;
   }
-
-  return contenido;
 }
 
 createRoot(document.getElementById("root")!).render(

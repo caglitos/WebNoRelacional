@@ -36,6 +36,7 @@ main {
 }
 
 section {
+  display: flex;
   display: felx;
   border-radius: 3.4vw;
   border: 2px solid #a3a3a3;
@@ -45,15 +46,15 @@ section {
   margin-bottom: 0.5vw;
   width: 77vw;
   max-height: 100vw;
+  text-align: end;
   backdrop-filter: blur(8px);
+  justify-content: space-aroxund;
   justify-content: flex-start;
-
   transition: 0.2s ease-in-out;
 }
 
 section:hover {
   border: 2px solid #007bff;
-
   transition: border 0.5s ease-in-out;
 }
 
@@ -66,27 +67,23 @@ input {
   margin: 1vw;
   outline: none;
   font-size: 2.6vw;
-
   transition: border 0.2s ease-in-out, padding 0.2s ease-in-out,
     transform 0.2s ease-in-out;
 }
 
 input:hover {
   transform: scale(1.05);
-
   transition: 0.2s ease-in-out;
 }
 
 input:focus {
   border: 2px solid #007bff; /* azul al enfocar */
   transform: scale(1.05);
-
   transition: 0.2s ease-in-out;
 }
 
 input::placeholder {
   color: #222222;
-
   transition: 0.35s ease-in-out;
 }
 
@@ -106,7 +103,7 @@ input:focus::placeholder {
   font-size: 2.6vw;
   border: 0;
   opacity: 1;
-  transition: transform 0.2s ease-in-out; /* Solo transición para transform */
+  transition: 0.2s ease-in-out;
 }
 
 .BtnP {
@@ -127,7 +124,6 @@ input:focus::placeholder {
   color: #fff;
   opacity: 1;
   border: 2px solid #a3a3a3;
-
   transition: 0.2s ease-in-out;
 }
 
@@ -138,31 +134,33 @@ input:focus::placeholder {
 button:hover {
   opacity: 0.5;
   transform: scale(1.1);
-
   transition: 0.2s ease-in-out;
   cursor: pointer;
 }
 
 .BtnN:hover,
 .BtnP:hover {
-  transform: scale(1.1); /* Solo un scale controlado */
-  opacity: 1 !important; /* Fuerza opacidad completa al hacer hover */
+  transform: scale(1.11);
 }
 
 nav > * {
   opacity: 1;
   transform: scale(1);
   transition: all 0.3s ease; /* Transición suave */
-}
+} /* Aplicar el efecto SOLO cuando el hover está en un botón (no en el nav) */
 
-/* Aplicar el efecto SOLO cuando el hover está en un botón (no en el nav) */
 nav > *:hover {
   transform: scale(1.2);
   opacity: 1;
   z-index: 1; /* Opcional: para que el botón hovered quede sobre los demás */
+} /* Afectar a los demás botones solo cuando un botón está en hover */
+
+nav > *:hover ~ *,
+nav:hover > *:not(:hover) {
+  transform: scale(0.9);
+  transition: all 0.5s ease; /* Transición suave */
 }
 
-/* Afectar a los demás botones solo cuando un botón está en hover */
 nav {
   pointer-events: none; /* El nav no detecta hover */
 }
@@ -173,54 +171,19 @@ nav > * {
   transition: opacity 0.3s;
 }
 
-nav > *:hover ~ *,          /* Hermanos posteriores */
-nav > .BtnN:has(~ *:hover) {
+nav > *:hover ~ *,          /* Hermanos posteriores */ nav > .BtnN:has(~ *:hover) {
   /* Hermanos anteriores (solo navegadores modernos) */
   opacity: 0.5;
   transform: scale(0.95);
 }
 
-.button-container {
-  position: relative; /* Necesario para posicionar el tooltip */
-  display: inline-block;
-}
-
-.extra {
-  /* Estilo del tooltip */
-  position: absolute;
-  top: 100%; /* Aparece debajo del botón */
-  left: 50%;
-  transform: translateX(-50%);
-
-  /* Diseño del cuadro */
-  background: white;
-  color: black;
-  padding: 8px;
-  border-radius: 4px;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-  border: 1px solid #ddd;
-
-  /* Oculto por defecto */
-  opacity: 0;
-  visibility: hidden;
-  transition: opacity 0.3s, visibility 0.3s;
-
-  /* Ancho máximo y ajuste de texto */
-  min-width: 100px;
-  width: 150px;
-  max-width: 200px;
-  text-align: center;
-  white-space: nowrap;
-}
-
-.BtnN:hover + .extra {
-  opacity: 1;
-  visibility: visible;
+nav > *:hover ~ *,          /* Hermanos posteriores */ nav > .BtnP:has(~ *:hover) {
+  /* Hermanos anteriores (solo navegadores modernos) */
+  opacity: 0.5;
 }
 
 .BtnP:hover {
   cursor: auto;
-
   opacity: 1;
   transform: scale(1);
 }
@@ -242,6 +205,7 @@ nav > .BtnN:has(~ *:hover) {
 }
 
 .input-con-boton input {
+  padding-right: 3vw; /* espacio para el botón */
   width: 100%;
 }
 
