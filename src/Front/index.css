@@ -201,6 +201,10 @@ nav:hover {
   align-items: center;
 }
 
+.input-con-boton input {
+  width: 100%;
+}
+
 .input-con-boton .boton {
   position: absolute;
   right: 0.5vw;
