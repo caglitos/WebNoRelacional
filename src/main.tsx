@@ -8,6 +8,7 @@ import {
   Eliminar,
 } from "./Front/components/Pags";
 import "./Front/index.css";
+import "./Front/app.css";
 
 function paguina() {
   const page = new URLSearchParams(window.location.search).get("page");
