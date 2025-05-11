@@ -6,9 +6,11 @@ import {
   Registro,
   Editar,
   Eliminar,
-} from "./Front/components/Pags";
-import "./Front/index.css";
-import "./Front/keyframes.css";
+  Cantget,
+} from "./components/Pags";
+import "./index.css";
+import "./keyframes.css";
+import App from "./App";
 
 function paguina() {
   const page = new URLSearchParams(window.location.search).get("page");
@@ -25,10 +27,10 @@ function paguina() {
     case "Revisar":
       return <Revisar />;
     default:
-      return <Registro />;
+      return <Cantget />;
   }
 }
 
 createRoot(document.getElementById("root")!).render(
-  <StrictMode>{paguina()}</StrictMode>
+  <StrictMode>{App()}</StrictMode>
 );

@@ -9,7 +9,7 @@ interface ButtonProps {
 
 const Button: React.FC<ButtonProps> = ({ text, href, extra }) => {
   const handleClick = () => {
-    window.location.href = "/?page=" + href;
+    window.location.href = href;
   };
 
   return (

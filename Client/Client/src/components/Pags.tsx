@@ -203,3 +203,49 @@ export const Revisar: React.FC = () => {
     </>
   );
 };
+
+export const Cantget: React.FC = () => {
+  return (
+    <>
+      <header>
+        <nav>
+          <Button
+            text="Registro"
+            extra="Pestaña para suibir los elementos"
+            href="Registro"
+          />
+          <Button
+            text="Eliminar"
+            extra="Pestaña para eliminar elementos subidos"
+            href="Eliminar"
+          />
+          <Button
+            text="Editar"
+            extra="Pestaña para actualizar elementos subidos"
+            href="Editar"
+          />
+          <Button
+            text="Descargar"
+            extra="Pestaña para descargar elementos subidos"
+            href="Descargar"
+          />
+          <Button
+            text="Revisar"
+            extra="Pestaña para ver los elementos subidos"
+            href="Revisar"
+          />
+        </nav>
+      </header>
+      <body>
+        <center>
+          <h1 className="Cantget">No se ha encontrado la pagina</h1>
+          <h2 className="Cantget">
+            <a onClick={() => (window.location.href = "/?page=Registro")}>
+              regresar al inicio
+            </a>
+          </h2>
+        </center>
+      </body>
+    </>
+  );
+};
