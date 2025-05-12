@@ -66,6 +66,14 @@ input {
   transition: 0.2s ease-in-out;
 }
 
+a {
+  cursor: pointer;
+  text-decoration: none;
+  color: #ccc;
+  text-decoration: underline;
+  font-size: 2vw;
+}
+
 section:hover {
   border: 2px solid #007bff;
 
@@ -187,7 +195,12 @@ nav:hover {
 .input-con-boton {
   position: relative;
   display: inline-flex;
+  left: 4vw;
   align-items: center;
+}
+
+.input-con-boton:nth-child(2) {
+  left: 0;
 }
 
 .input-con-boton input {
@@ -298,4 +311,68 @@ nav:hover {
 
 .BtnN:hover::after {
   opacity: 0;
+}
+
+.ErrorSection {
+  display: flex;
+  flex-direction: row;
+  padding-top: 10vh;
+  padding-left: 5vw;
+  height: 70vh;
+  width: 73vw;
+  margin-top: 10vh;
+  margin-left: 10vw;
+  color: #fff;
+}
+
+.ErrorSection div {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  padding-top: 5vh;
+  height: 40vh;
+}
+
+.ErrorSection div h3 {
+  position: relative;
+  top: -5vh;
+  font-weight: 100;
+  font-size: 1.8vw;
+}
+
+.mensaje {
+  font-size: 2.5vw;
+  color: #fff;
+}
+
+.guia {
+  position: relative;
+  font-size: 2.5vw;
+  color: #fff;
+  margin-top: 1vw;
+  font-weight: 100;
+  left: 2vw;
+}
+
+.a04 {
+  position: absolute;
+  color: black;
+  top: -4vw;
+  left: 38vw;
+  font-size: 20vw;
+  font-style: italic;
+  transform: rotate(-12deg);
+}
+
+.Montañista {
+  position: absolute;
+  background-image: url("./assets/montañista.png");
+  background-size: auto 38vh;
+  background-repeat: no-repeat;
+  background-position: center;
+  left: 20vw;
+  top: -2.5vw;
+
+  height: 10vh;
+  width: 100%;
 }

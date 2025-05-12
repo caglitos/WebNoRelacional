@@ -7,7 +7,7 @@ interface ButtonProps {
   href: string;
 }
 
-const Button: React.FC<ButtonProps> = ({ text, href, extra }) => {
+const Button: React.FC<ButtonProps> = ({ text, href }) => {
   const handleClick = () => {
     window.location.href = href;
   };

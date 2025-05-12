@@ -205,47 +205,37 @@ export const Revisar: React.FC = () => {
 };
 
 export const Cantget: React.FC = () => {
+  const [timeleft, setTimeleft] = React.useState(5);
+
+  React.useEffect(() => {
+    if (timeleft === 0) {
+      window.location.href = "/Registro";
+      return;
+    }
+    const timer = setTimeout(() => {
+      setTimeleft(timeleft - 1);
+    }, 1000);
+    return () => clearTimeout(timer);
+  }, [timeleft]);
+
   return (
-    <>
-      <header>
-        <nav>
-          <Button
-            text="Registro"
-            extra="Pestaña para suibir los elementos"
-            href="Registro"
-          />
-          <Button
-            text="Eliminar"
-            extra="Pestaña para eliminar elementos subidos"
-            href="Eliminar"
-          />
-          <Button
-            text="Editar"
-            extra="Pestaña para actualizar elementos subidos"
-            href="Editar"
-          />
-          <Button
-            text="Descargar"
-            extra="Pestaña para descargar elementos subidos"
-            href="Descargar"
-          />
-          <Button
-            text="Revisar"
-            extra="Pestaña para ver los elementos subidos"
-            href="Revisar"
-          />
-        </nav>
-      </header>
-      <body>
-        <center>
-          <h1 className="Cantget">No se ha encontrado la pagina</h1>
-          <h2 className="Cantget">
-            <a onClick={() => (window.location.href = "/?page=Registro")}>
-              regresar al inicio
-            </a>
-          </h2>
-        </center>
-      </body>
-    </>
+    <section className="ErrorSection">
+      <div>
+        <h1 className="mensaje">Oops! Te perdiste en la montaña.</h1>
+        <h3>
+          Quiza la pagina que estas buscando no existe <br />o no se llama asi.
+        </h3>
+        <h2 className="guia">El guia llega en: 00:00:0{timeleft}</h2>
+        <a
+          onClick={() => {
+            window.location.href = "/Registro";
+          }}
+        >
+          Regresar solo
+        </a>
+      </div>
+      <div className="Montañista"></div>
+      <h1 className="a04">404</h1>
+    </section>
   );
 };
