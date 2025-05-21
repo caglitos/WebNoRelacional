@@ -5,7 +5,53 @@ import ButtonPresed from "./ButonPresed";
 import Campo from "./CampoAdd";
 import ButtonAdd from "./ButtonAdd";
 
-export const Registro: React.FC = () => {
+export const Inicio: React.FC = () => {
+  return (
+    <>
+      <h1>Bienvenido a la página de inicio</h1>
+      <p>Esta es la página principal de la aplicación.</p>
+
+      <a
+        onClick={() => {
+          window.location.href = "/Agregar";
+        }}
+      >
+        Regresar solo
+      </a>
+    </>
+  );
+};
+
+export const Perfil: React.FC = () => {
+  return <h1>Este es el perfil del usuario.</h1>;
+};
+
+export const Login: React.FC = () => {
+  return (
+    <>
+      <main className="Login">
+        <form>
+          <div className="ProfileImg-LogIn"> </div>
+          <h1>E-Mail</h1>
+          <div className="input-con-imagen">
+            <input type="text" placeholder="     Correo Electrónico" />
+            <div className="ProfileImg-mini"></div>
+          </div>
+          <h1>Contraseña</h1>
+          <div className="candado"></div>
+          <input type="password" placeholder="Contraseña" />
+          <input type="button" value="Iniciar sesión" />
+        </form>
+      </main>
+    </>
+  );
+};
+
+export const Registrar: React.FC = () => {
+  return <h1>Este es el espacio del Register</h1>;
+};
+
+export const Agregar: React.FC = () => {
   const [campos, setCampos] = useState([Date.now()]); // IDs únicos
 
   const agregarCampo = () => {
@@ -73,7 +119,7 @@ export const Eliminar: React.FC = () => {
           <Button
             text="Registro"
             extra="Pestaña para suibir los elementos"
-            href="Registro"
+            href="Agregar"
           />
           <ButtonPresed text="Eliminar" />
           <Button
@@ -116,7 +162,7 @@ export const Editar: React.FC = () => {
           <Button
             text="Registro"
             extra="Pestaña para suibir los elementos"
-            href="Registro"
+            href="Agregar"
           />
           <Button
             text="Eliminar"
@@ -148,7 +194,7 @@ export const Descargar: React.FC = () => {
           <Button
             text="Registro"
             extra="Pestaña para suibir los elementos"
-            href="Registro"
+            href="Agregar"
           />
           <Button
             text="Eliminar"
@@ -180,7 +226,7 @@ export const Revisar: React.FC = () => {
           <Button
             text="Registro"
             extra="Pestaña para suibir los elementos"
-            href="Registro"
+            href="Agregar"
           />
           <Button
             text="Eliminar"
@@ -209,7 +255,7 @@ export const Cantget: React.FC = () => {
 
   React.useEffect(() => {
     if (timeleft === 0) {
-      window.location.href = "/Registro";
+      window.location.href = "/Agregar";
       return;
     }
     const timer = setTimeout(() => {
@@ -228,7 +274,7 @@ export const Cantget: React.FC = () => {
         <h2 className="guia">El guia llega en: 00:00:0{timeleft}</h2>
         <a
           onClick={() => {
-            window.location.href = "/Registro";
+            window.location.href = "/Agregar";
           }}
         >
           Regresar solo

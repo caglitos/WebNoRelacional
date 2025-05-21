@@ -8,6 +8,11 @@
   min-height: 100vh;
 }
 
+html {
+  display: grid;
+  place-items: center;
+}
+
 main,
 nav {
   display: flex;
@@ -21,6 +26,7 @@ nav {
   border: 2px solid #a3a3a3;
   padding: 0;
   justify-content: center;
+  box-shadow: #292929 0px 0px 8px 0px;
 
   transition: 0.15s ease-in-out;
 }
@@ -31,6 +37,7 @@ main {
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
+  box-shadow: #292929 0px 0px 8px 0px;
 
   transition: 0.2s ease-in-out;
 }
@@ -48,6 +55,7 @@ section {
   max-height: 100vw;
   backdrop-filter: blur(8px);
   justify-content: flex-start;
+  box-shadow: #292929 0px 0px 8px 0px;
 
   transition: 0.2s ease-in-out;
 }
@@ -62,6 +70,7 @@ input {
   margin: 1vw;
   outline: none;
   font-size: 2.6vw;
+  box-shadow: #292929 0px 0px 8px 0px;
 
   transition: 0.2s ease-in-out;
 }
@@ -121,6 +130,7 @@ input:focus::placeholder {
   font-size: 2.6vw;
   border: 0;
   opacity: 1;
+  box-shadow: #292929 0px 0px 8px 0px;
 
   transition: 0.2s ease-in-out;
 }
@@ -147,11 +157,15 @@ input:focus::placeholder {
   transition: 0.2s ease-in-out;
 }
 
-.BtnA {
-  background-color: #0fe136;
+.BtnD {
+  box-shadow: #292929 0px 0px 8px 0px;
 }
 
-/* Aplicar el efecto SOLO cuando el hover está en un botón (no en el nav) */
+.BtnA {
+  background-color: #0fe136;
+  box-shadow: #292929 0px 0px 4px 0px;
+}
+
 nav > *:hover {
   opacity: 1;
   z-index: 1; /* Opcional: para que el botón hovered quede sobre los demás */
@@ -162,12 +176,14 @@ nav > .BtnN:has(~ *:hover) {
   /* Hermanos anteriores (solo navegadores modernos) */
   opacity: 0.5;
   transform: scale(0.95);
+  box-shadow: #292929 0px 0px 4px 0px;
 }
 
 nav > *:hover ~ *,          /* Hermanos posteriores */
  nav > .BtnP:has(~ *:hover) {
   /* Hermanos anteriores (solo navegadores modernos) */
   opacity: 0.8;
+  box-shadow: #292929 0px 0px 4px 0px;
 }
 
 nav:hover {
@@ -279,33 +295,7 @@ nav:hover {
   z-index: 4;
   pointer-events: none;
   opacity: 0.7;
-  background: radial-gradient(
-      circle at var(--p1-x, 20%) var(--p1-y, 30%),
-      #fff 0.5vw,
-      transparent 0.7vw
-    ),
-    radial-gradient(
-      circle at var(--p2-x, 70%) var(--p2-y, 60%),
-      #e41111 0.3vw,
-      transparent 0.5vw
-    ),
-    radial-gradient(
-      circle at var(--p3-x, 50%) var(--p3-y, 80%),
-      #ffef13 0.4vw,
-      transparent 0.6vw
-    ),
-    radial-gradient(
-      circle at var(--p4-x, 80%) var(--p4-y, 20%),
-      #e00ccf 0.2vw,
-      transparent 0.4vw
-    ),
-    radial-gradient(
-      circle at var(--p5-x, 40%) var(--p5-y, 50%),
-      #ff029e 0.25vw,
-      transparent 0.45vw
-    );
-  animation: particles-move-fluid 6s cubic-bezier(0.77, 0, 0.18, 1) infinite;
-  will-change: background;
+
   transition: all 0.2s;
 }
 
@@ -375,4 +365,61 @@ nav:hover {
 
   height: 10vh;
   width: 100%;
+}
+
+.Login {
+  width: 40vw;
+}
+
+.ProfileImg-LogIn,
+.ProfileImg-mini {
+  background-image: url("./assets/ProfileImg.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #a3a3a3;
+  box-shadow: #292929 0px 0px 8px 0px;
+  position: absolute;
+  top: -5vh;
+  left: 15vw;
+  z-index: 1;
+  transition: 0.2s ease-in-out;
+  filter: drop-shadow(0px 0px 5px #292929);
+
+  height: 10vw;
+  width: 10vw;
+}
+
+.ProfileImg-mini {
+  background-image: url("./assets/ProfileGray.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff;
+  border-radius: 50%;
+  border: 2px solid #a3a3a3;
+  box-shadow: #292929 0px 0px 8px 0px;
+  z-index: 1;
+  transition: 0.2s ease-in-out;
+
+  height: 3vw;
+  width: 3vw;
+}
+
+.input-con-imagen {
+  display: inline-flex;
+  align-items: center;
+  position: relative;
+  left: 0;
+}
+
+.input-con-imagen input {
+  width: 100%;
+}
+
+.input-con-imagen .ProfileImg-mini {
+  position: absolute;
+  right: 5vw;
 }
