@@ -5,9 +5,6 @@ import {
   Login,
   Registrar,
   Agregar,
-  Eliminar,
-  Editar,
-  Descargar,
   Revisar,
   Cantget,
 } from "./components/Pags";
@@ -22,9 +19,6 @@ export default () => {
         <Route path="/Login" element={<Login />} />
         <Route path="/Registrar" element={<Registrar />} />
         <Route path="/Agregar" element={<Agregar />} />
-        <Route path="/Eliminar" element={<Eliminar />} />
-        <Route path="/Editar" element={<Editar />} />
-        <Route path="/Descargar" element={<Descargar />} />
         <Route path="/Revisar" element={<Revisar />} />
       </Routes>
     </BrowserRouter>

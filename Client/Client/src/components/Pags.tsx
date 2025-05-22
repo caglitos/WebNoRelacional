@@ -65,28 +65,15 @@ export const Agregar: React.FC = () => {
   return (
     <>
       <header>
-        <nav>
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+          }}
+        >
+          <div className="mountain">Mountain DB</div>
           <ButtonPresed text="Registro" />
-          <Button
-            text="Eliminar"
-            extra="Pestaña para eliminar elementos subidos"
-            href="Eliminar"
-          />
-          <Button
-            text="Editar"
-            extra="Pestaña para actualizar elementos subidos"
-            href="Editar"
-          />
-          <Button
-            text="Descargar"
-            extra="Pestaña para descargar elementos subidos"
-            href="Descargar"
-          />
-          <Button
-            text="Revisar"
-            extra="Pestaña para ver los elementos subidos"
-            href="Revisar"
-          />
+          <Button text="Revisar" href="Revisar" />
         </nav>
       </header>
 
@@ -105,147 +92,36 @@ export const Agregar: React.FC = () => {
   );
 };
 
-export const Eliminar: React.FC = () => {
-  const [campos, setCampos] = useState([Date.now()]); // IDs únicos
-
-  const eliminarCampo = (id: number) => {
-    setCampos(campos.filter((c) => c !== id));
-  };
-
-  return (
-    <>
-      <header>
-        <nav>
-          <Button
-            text="Registro"
-            extra="Pestaña para suibir los elementos"
-            href="Agregar"
-          />
-          <ButtonPresed text="Eliminar" />
-          <Button
-            text="Editar"
-            extra="Pestaña para actualizar elementos subidos"
-            href="Editar"
-          />
-          <Button
-            text="Descargar"
-            extra="Pestaña para descargar elementos subidos"
-            href="Descargar"
-          />
-          <Button
-            text="Revisar"
-            extra="Pestaña para ver los elementos subidos"
-            href="Revisar"
-          />
-        </nav>
-      </header>
-
-      <main>
-        {campos.map((id) => (
-          <Campo key={id} onDelete={() => eliminarCampo(id)} />
-        ))}
-
-        {/* Contenedor de botones finales */}
-        <div className="botones-finales">
-          <button className="BtnA DelCampo">Eliminar</button>
-        </div>
-      </main>
-    </>
-  );
-};
-
-export const Editar: React.FC = () => {
-  return (
-    <>
-      <header>
-        <nav>
-          <Button
-            text="Registro"
-            extra="Pestaña para suibir los elementos"
-            href="Agregar"
-          />
-          <Button
-            text="Eliminar"
-            extra="Pestaña para eliminar elementos subidos"
-            href="Eliminar"
-          />
-          <ButtonPresed text="Editar" />
-          <Button
-            text="Descargar"
-            extra="Pestaña para descargar elementos subidos"
-            href="Descargar"
-          />
-          <Button
-            text="Revisar"
-            extra="Pestaña para ver los elementos subidos"
-            href="Revisar"
-          />
-        </nav>
-      </header>
-    </>
-  );
-};
-
-export const Descargar: React.FC = () => {
-  return (
-    <>
-      <header>
-        <nav>
-          <Button
-            text="Registro"
-            extra="Pestaña para suibir los elementos"
-            href="Agregar"
-          />
-          <Button
-            text="Eliminar"
-            extra="Pestaña para eliminar elementos subidos"
-            href="Eliminar"
-          />
-          <Button
-            text="Editar"
-            extra="Pestaña para actualizar elementos subidos"
-            href="Editar"
-          />
-          <ButtonPresed text="Descargar" />
-          <Button
-            text="Revisar"
-            extra="Pestaña para ver los elementos subidos"
-            href="Revisar"
-          />
-        </nav>
-      </header>
-    </>
-  );
-};
-
 export const Revisar: React.FC = () => {
   return (
     <>
       <header>
-        <nav>
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "90vw",
+          }}
+        >
+          <div className="mountain">Mountain DB</div>
           <Button
             text="Registro"
-            extra="Pestaña para suibir los elementos"
             href="Agregar"
+            styles={{
+              left: "3vw",
+            }}
           />
-          <Button
-            text="Eliminar"
-            extra="Pestaña para eliminar elementos subidos"
-            href="Eliminar"
+          <ButtonPresed
+            text="Revisar"
+            styles={{
+              left: "-1vw",
+            }}
           />
-          <Button
-            text="Editar"
-            extra="Pestaña para actualizar elementos subidos"
-            href="Editar"
-          />
-          <Button
-            text="Descargar"
-            extra="Pestaña para descargar elementos subidos"
-            href="Descargar"
-          />
-          <ButtonPresed text="Revisar" />
         </nav>
       </header>
+      <body>
+        <main></main>
+      </body>
     </>
   );
 };

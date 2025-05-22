@@ -17,6 +17,7 @@ main,
 nav {
   display: flex;
   text-align: center;
+  justify-content: center;
   background-color: transparent;
   margin: 3.4vw;
   margin-top: 2vw;
@@ -40,6 +41,10 @@ main {
   box-shadow: #292929 0px 0px 8px 0px;
 
   transition: 0.2s ease-in-out;
+}
+
+nav > .BtnN:hover {
+  padding-right: 1vw;
 }
 
 section {
@@ -123,9 +128,11 @@ input:focus::placeholder {
 .BtnP,
 .BtnN {
   background-color: #0fe1c5;
-  margin: 0.71vw;
-  width: 16vw;
+  margin-top: 0.71vw;
+  margin-bottom: 0.71vw;
   height: 4.5vw;
+  width: 26vw;
+
   border-radius: 2.5vw;
   font-size: 2.6vw;
   border: 0;
@@ -136,8 +143,17 @@ input:focus::placeholder {
 }
 
 .BtnP {
+  position: relative;
+  left: 5vw;
   background-color: #0f93b1;
   color: #fff;
+}
+
+.BtnN {
+  position: relative;
+  left: -2vw;
+  z-index: 2;
+  overflow: hidden;
 }
 
 .BtnD,
@@ -174,6 +190,7 @@ nav > *:hover {
 nav > *:hover ~ *,          /* Hermanos posteriores */
 nav > .BtnN:has(~ *:hover) {
   /* Hermanos anteriores (solo navegadores modernos) */
+
   opacity: 0.5;
   transform: scale(0.95);
   box-shadow: #292929 0px 0px 4px 0px;
@@ -184,11 +201,6 @@ nav > *:hover ~ *,          /* Hermanos posteriores */
   /* Hermanos anteriores (solo navegadores modernos) */
   opacity: 0.8;
   box-shadow: #292929 0px 0px 4px 0px;
-}
-
-nav:hover {
-  padding-left: 0.5vw;
-  padding-right: 0.5vw;
 }
 
 .BtnP:hover {
@@ -258,49 +270,6 @@ nav:hover {
 
 .DelCampo:hover {
   transform: scale(1.03);
-}
-
-.BtnN {
-  position: relative;
-  z-index: 2;
-  overflow: hidden;
-}
-
-.BtnN::before {
-  content: "";
-  position: absolute;
-  backdrop-filter: blur(3px);
-  margin: 0.71vw;
-  width: 99%;
-  height: 99%;
-  left: -5%;
-  top: -15%;
-  z-index: 3;
-  pointer-events: none;
-  opacity: 1;
-  transition: opacity 0.2s;
-}
-
-.BtnN:hover::before {
-  opacity: 0;
-}
-
-.BtnN::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 0;
-  right: 0;
-  bottom: 0;
-  z-index: 4;
-  pointer-events: none;
-  opacity: 0.7;
-
-  transition: all 0.2s;
-}
-
-.BtnN:hover::after {
-  opacity: 0;
 }
 
 .ErrorSection {
@@ -422,4 +391,34 @@ nav:hover {
 .input-con-imagen .ProfileImg-mini {
   position: absolute;
   right: 5vw;
+}
+
+.mountain {
+  font-style: italic;
+  font-weight: 600;
+  font-size: 2.5vw;
+  color: #fff;
+  position: relative;
+  top: 3vh;
+  left: 4vw;
+}
+
+.mountain::before {
+  content: "";
+  background-image: url("./assets/Logo.svg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  backdrop-filter: blur(4px);
+
+  border-radius: 10%;
+
+  position: fixed;
+  top: 0.7vh;
+  left: 22vw;
+  z-index: 1;
+  height: 5vw;
+  width: 5vw;
+
+  transition: 0.2s ease-in-out;
 }
