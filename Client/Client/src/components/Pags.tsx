@@ -4,20 +4,55 @@ import Button from "./ButtonRedirect";
 import ButtonPresed from "./ButonPresed";
 import Campo from "./CampoAdd";
 import ButtonAdd from "./ButtonAdd";
+import Article from "./Article";
 
 export const Inicio: React.FC = () => {
   return (
     <>
-      <h1>Bienvenido a la página de inicio</h1>
-      <p>Esta es la página principal de la aplicación.</p>
-
-      <a
-        onClick={() => {
-          window.location.href = "/Agregar";
-        }}
-      >
-        Regresar solo
-      </a>
+      <header>
+        <nav
+          style={{
+            display: "flex",
+            justifyContent: "space-between",
+            width: "90vw",
+            paddingTop: "0vh",
+            marginTop: "1.5vh",
+          }}
+        >
+          <div className="mountain">Mountain DB</div>
+          <Button
+            text="Registro"
+            href="Agregar"
+            styles={{
+              left: "3vw",
+            }}
+          />
+          <Button
+            text="Revisar"
+            href="Revisar"
+            styles={{
+              left: "-1vw",
+            }}
+          />
+        </nav>
+      </header>
+      <main className="home">
+        <Article
+          title="¿Qué es esto?"
+          content="Esta es una página web que utiliza una base de datos NoSQL de tipo documental para almacenar y gestionar información sobre todo tipo de cosas que no sigan una estructura fija."
+          content2="Esta web fue creada por alumnos del CBTis142 como parte de un proyecto escolar, y está diseñada para ser un ejemplo de cómo se puede utilizar una base de datos NoSQL para almacenar información de manera flexible."
+          image="./assets/MongoDB.svg"
+          alt=""
+          classNameImg="mongo"
+        />
+        <Article
+          title="¿Qué es una base de datos NoSQL?"
+          content="Una base de datos NoSQL es un sistema de gestión de bases de datos que no utiliza el modelo relacional tradicional. En su lugar, permite almacenar datos en formatos flexibles como documentos, clave-valor, columnas o grafos."
+          image="./assets/Logo.svg"
+          alt=""
+          classNameImg="Logo"
+        />
+      </main>
     </>
   );
 };

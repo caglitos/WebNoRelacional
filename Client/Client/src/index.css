@@ -1,3 +1,7 @@
+*::-webkit-scrollbar {
+  display: none;
+}
+
 :root {
   font-family: Arial, Helvetica, sans-serif;
   background-image: url("./assets/mountain.jpg");
@@ -86,6 +90,24 @@ a {
   color: #ccc;
   text-decoration: underline;
   font-size: 2vw;
+}
+
+h1 {
+  color: white;
+}
+
+article {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+figure {
+  width: 100%;
+  max-width: 40vh;
+  margin: 0;
+  margin-right: 0;
+  padding-right: 0;
 }
 
 section:hover {
@@ -421,4 +443,91 @@ nav > *:hover ~ *,          /* Hermanos posteriores */
   width: 5vw;
 
   transition: 0.2s ease-in-out;
+}
+
+.wh {
+  color: white;
+}
+
+.container {
+  display: flex;
+  flex-direction: row;
+}
+
+.Logo,
+.mongo {
+  font-family: Arial, Helvetica, sans-serif;
+  background-image: url("./assets/MongoDB.svg");
+  background-size: contain;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: scroll;
+  min-height: 40vh;
+  min-width: 40vh;
+
+  background-color: #ccc;
+  border-radius: 5vh;
+}
+
+.Logo {
+  background-image: url("./assets/Logo.svg");
+}
+
+.wh {
+  margin-left: 5vh;
+  margin-right: 20vh;
+}
+
+.home {
+  overflow-x: clip;
+  overflow-y: auto;
+  position: relative;
+  height: 80vh;
+  max-height: 80vh;
+  width: 90vw;
+  display: flex;
+  flex-direction: column;
+  scroll-snap-type: y mandatory;
+  gap: 50vh;
+  padding-top: 30vh;
+  padding-bottom: 40vh;
+}
+
+.home > article {
+  position: relative;
+  width: 100%;
+  min-height: 80vh;
+  max-height: 80vh;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  margin: 0;
+
+  top: 0vh;
+  scroll-snap-align: start;
+}
+
+.home > article:nth-child(1n) {
+  padding-top: 80vh;
+  width: 100%;
+  box-sizing: border-box;
+}
+.home > article:nth-child(2n) {
+  padding-top: 30vh;
+  width: 100%;
+  min-height: 100%;
+  box-sizing: border-box;
+}
+
+div .wh {
+  margin-left: 2vw;
+  width: 30vw;
+}
+
+.diez {
+  min-height: 10vh;
+  max-height: 10vh;
+  min-width: 10vw;
+  max-width: 10vw;
 }
